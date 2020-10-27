@@ -1,0 +1,65 @@
+.new-account {
+  background: linear-gradient(217deg, rgb(4, 23, 87), rgb(49, 125, 240));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  height: 900px;
+}
+
+.new-account-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 1200px;
+  height: 700px;
+  padding-left: 150px;
+  padding-right: 150px;
+  background: rgb(255, 255, 255, 0.1);
+  border-radius: 3px;
+  /* overflow: auto; */
+}
+.title-item {
+  font-size: 48px;
+  color: White;
+  margin-bottom: 60px;
+}
+
+.horizontal-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.separator {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-group-elem {
+  width: 300px;
+}
+
+.btn-primary-new-account {
+  width: 300px;
+  align-self: center;
+  justify-self: flex-end;
+  margin: 20px;
+}
+
+.summary-head {
+  font-size: 14px;
+  color: white;
+}
+
+.summary-title {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,22 @@
+.deliveryaddress-selected {
+  background-color: orange;
+  width: 200px;
+  height: 200px;
+  border-radius: 4px;
+  padding: 10px;
+}
+.deliveryaddress {
+  background-color: rgb(247, 245, 245);
+  width: 200px;
+  height: 200px;
+  border-radius: 4px;
+  padding: 10px;
+  margin-right: 20px;
+}
+.deliveryaddress:hover {
+  transform: translate3d(0px, -1px, 0px);
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
