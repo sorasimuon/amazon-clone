@@ -3,6 +3,7 @@ import "./ProductRating.css";
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
+import uuid from "react-uuid";
 
 function ProductRating({ rating }) {
   // Define the number of Stars, HalfStars and BorderStars
@@ -20,13 +21,13 @@ function ProductRating({ rating }) {
       {Array(rating)
         .fill()
         .map((_, i) => (
-          <StarIcon></StarIcon>
+          <StarIcon key={uuid()}></StarIcon>
         ))}
       {starhalficon}
       {Array(5 - rating - semiScore)
         .fill()
         .map((_, i) => (
-          <StarBorderIcon></StarBorderIcon>
+          <StarBorderIcon key={uuid()}></StarBorderIcon>
         ))}
     </div>
   );

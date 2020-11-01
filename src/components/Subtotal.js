@@ -9,6 +9,14 @@ function Subtotal() {
   const history = useHistory();
   const [{ basket }, dispatch] = useStateValue();
 
+  const goToPayment = () => {
+    // go to payment page if basket not empty
+    console.log("basket length : ", basket.length);
+    if (basket.length > 0) {
+      history.push("/payment");
+    }
+  };
+
   return (
     <div className="subtotal">
       <CurrencyFormat
@@ -28,22 +36,9 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button onClick={(e) => history.push("/payment")}>
-        Proceed to checkout
-      </button>
+      <button onClick={goToPayment}>Proceed to checkout</button>
     </div>
   );
 }
-
-// function calculateSubtotal(basket) {
-//   var subtotal = 0;
-//   var item;
-
-//   for (item of basket) {
-//     subtotal += item["price"];
-//   }
-
-//   return subtotal;
-// }
 
 export default Subtotal;

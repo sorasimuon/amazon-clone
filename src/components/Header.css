@@ -6,7 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  min-width: 1400px;
+  min-width: 1200px;
 }
 .header__logo {
   width: 100px;
