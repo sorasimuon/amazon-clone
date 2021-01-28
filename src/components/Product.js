@@ -15,7 +15,7 @@ function Product({ id, title, image, price, rating }) {
         id: id,
         title: title,
         image: image,
-        price: price,
+        price: parseFloat(price),
         rating: rating,
       },
     });

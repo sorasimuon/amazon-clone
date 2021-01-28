@@ -6,10 +6,28 @@ import Tooltip from "react-bootstrap/Tooltip";
 import { useStateValue } from "../utilities/StateProvider";
 import uuid from "react-uuid";
 
+import { makeStyles, IconButton } from "@material-ui/core";
+import { amber, brown } from "@material-ui/core/colors";
+import AddIcon from "@material-ui/icons/Add";
+
 import "./NewDeliveryAddress.css";
 import "./Login.js";
 
+const useStyles = makeStyles((theme) => ({
+  addIcon: {
+    color: brown[500],
+    backgroundColor: amber[500],
+    "&:focus": {
+      outline: "none",
+    },
+    "&:hover": {
+      backgroundColor: amber[600],
+    },
+  },
+}));
+
 function NewDeliveryAddress() {
+  const classes = useStyles();
   const [{ addresses }, dispatch] = useStateValue();
   const [show, setShow] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -58,14 +76,14 @@ function NewDeliveryAddress() {
 
   return (
     <>
-      <Button
+      <IconButton
         ref={target}
         variant="warning"
-        className="btn-new-address"
+        className={classes.addIcon}
         onClick={() => handleShowLimit(maxNbAddresses)}
       >
-        +
-      </Button>
+        <AddIcon />
+      </IconButton>
 
       <Overlay target={target.current} show={showOverlay} placement="top">
         {(props) => (

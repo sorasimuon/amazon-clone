@@ -25,19 +25,6 @@
   margin-top: 20px;
 }
 
-.payment-address-section-left {
-  display: flex;
-  justify-content: flex-start;
-  width: 90%;
-}
-
-.payment-address-section-right {
-  display: flex;
-  justify-content: center;
-  width: 10%;
-  align-items: center;
-}
-
 .btn-new-address {
   border-radius: 50%;
   height: 70px;
@@ -50,4 +37,7 @@
 .payment-priceContainer > Button {
   color: rgb(87, 64, 38);
   background-color: rgb(255, 174, 0);
+}
+h1 {
+  color: #ffb300;
 }

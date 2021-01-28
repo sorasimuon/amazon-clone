@@ -10,7 +10,8 @@ function ProductRating({ rating }) {
   //   console.log("Rating checkout = ", rating);
   let semiScore = 0;
   let starhalficon = null;
-  if (rating % 2 > 1) {
+
+  if (rating % 1 > 0) {
     semiScore = 1;
     rating = Math.floor(rating);
     starhalficon = <StarHalfIcon />;

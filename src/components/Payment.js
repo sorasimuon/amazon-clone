@@ -34,7 +34,9 @@ function Payment() {
       const response = await axios({
         method: "post",
         // Stripe expects the total in a currencies subunits
-        url: `payments/create?total=${getBasketTotal(basket) * 100}`,
+        url: `payments/create?total=${Math.round(
+          getBasketTotal(basket) * 100
+        )}`,
       });
       setClientSecret(response.data.clientSecret);
     };
@@ -90,32 +92,26 @@ function Payment() {
       <div className="payment-container">
         {/* Payment Section - delivery address */}
         <div className="payment-section">
-          <div className="payment-title">
-            <h3>Delivery Address</h3>
-          </div>
+          <h1>Delivery Address</h1>
           <div className="payment-address-section">
-            <div className="payment-address-section-left">
-              {addresses.map((item) => (
-                <DeliveryAddress
-                  key={item}
-                  street={item?.street}
-                  postalCode={item.postalCode}
-                  city={item.city}
-                  country={item.city}
-                />
-              ))}
-            </div>
-            <div className="payment-address-section-right">
-              <NewDeliveryAddress />
-            </div>
+            {addresses.map((item) => (
+              <DeliveryAddress
+                key={item}
+                street={item?.street}
+                postalCode={item.postalCode}
+                city={item.city}
+                country={item.city}
+              />
+            ))}
+            <NewDeliveryAddress />
           </div>
         </div>
 
         {/* Payment Section - review Items */}
         <div className="payment-section">
           <div className="payment-title">
-            <h3> Review Items and Delivery</h3>
-            <h4>{basket.length} item(s) </h4>
+            <h1> Review Items and Delivery</h1>
+            <h2>{basket.length} item(s) </h2>
           </div>
           <div className="payment-items">
             {basket.map((item) => (
@@ -134,7 +130,7 @@ function Payment() {
         {/* Payment Section - Payment method */}
         <div className="payment-section">
           <div className="payment-title">
-            <h3>Payment Method</h3>
+            <h1>Payment Method</h1>
           </div>
           <div className="payment-details">
             <form onSubmit={handleSubmit}>

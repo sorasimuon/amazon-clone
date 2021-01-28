@@ -36,7 +36,9 @@ function Login() {
           history.push("/");
         }
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => {
+        document.getElementById("errorMessage").innerText = error.message;
+      });
   };
 
   return (
